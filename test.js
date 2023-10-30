@@ -78,3 +78,36 @@ function getYoungUsers(age) {
 
 let hehe = getYoungUsers(15)
 console.log(hehe)
+
+function lnwza(o1, o2, o3 = 'heeyai', ...o4) {
+    console.log(arguments[0])
+    console.log(arguments[1])
+    console.log(arguments[2])
+    console.log(o3)
+    console.log(arguments[3])
+    console.log(o4)
+
+}
+const num = [1, 2, 3, 4, 5]
+lnwza(1, 2, 1, 2, 3, 4)
+lnwza(...num)
+
+function unpackingarray([x1, x2]) {
+    console.log(x1)
+    console.log(x2)
+}
+unpackingarray(num)
+
+let [y1, y2] = num
+console.log(y1, y2)
+
+const person = [
+    { id: 1, name: 'Suda' },
+    { id: 2, name: 'Surapong' },
+    { id: 3, name: 'Somchai' }
+]
+function getPersonName([, { name }]) {
+    return name
+}
+
+console.log(getPersonName(person))

@@ -23,8 +23,8 @@ console.log(authorName)
 
 // ANS 03 งง
 // do anything shit result should be jsGuy is Somchai
-function getFirstName({ displayName, fullName: { firstName: fname } }) {
-    return `${displayName} is ${fname}`
+function getFirstName({ displayName, fullName: { firstName } }) {
+    return `${displayName} is ${firstName}`
 }
 const students = {
     studentId: 64001,
