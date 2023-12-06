@@ -1,43 +1,41 @@
 import { products } from './data/products.js'
 
-console.log(products)
-console.log('hello')
-//64130500013 Chonticha Li
+
 function itemList(userItems) {
   const items = userItems
 
-  const initialPage = () => {
-    const inputItem = document.querySelector('input')
-    inputItem.addEventListener('keydown', filterItemsHandler)
+
+  function initalPage() {
+    const input = document.querySelector('input')
+    input.addEventListener('input', filterItemsHandler)
     showItems(items)
-    console.log('helloworld')
+
+  }
+  function filterItemsHandler() {
+    const inputvalue = document.querySelector('input')
+    const something = items.filter((item) => item.keywords.toLowerCase().includes(inputvalue.value.toLowerCase()))
+    showItems(something)
+
+  }
+  function showItems(items) {
+    let ul = document.querySelector('#items')
+    ul.innerHTML = ''
+    items.forEach((item) => {
+      let liitem = document.createElement('li')
+      liitem.textContent = `ID:${item.id}, NAME:${item.name}, KEYWORDS:${item.keywords}`
+      ul.appendChild(liitem)
+    })
+
+
   }
 
-  const filterItemsHandler = (event) => {
-    const inputI = document.querySelector('input')
-    const aryFind = items.filter((e) => e.keywords.toLowerCase().includes((`${inputI.value}`).toLowerCase()))
-    showItems(aryFind)
-  }
+  return { showItems, initalPage, filterItemsHandler }
 
-  const showItems = (items) => {
-    const aryRecieve = items
-    const ulParent = document.getElementById('items')
-    ulParent.textContent = ''
-    for (let i = 0; i < aryRecieve.length; i++) {
-      const liItem = document.createElement('li')
-      liItem.textContent = `ID:${aryRecieve[i].id}, NAME:${aryRecieve[i].name}, KEYWORDS:${aryRecieve[i].keywords}`
-      ulParent.appendChild(liItem)
-    }
-  }
-
-  return {
-    initialPage,
-    filterItemsHandler,
-    showItems
-  }
 }
 
 // export { itemList }
-const { initialPage, filterItemsHandler, showItems } = itemList(products)
-initialPage()
+const { initalPage, filterItemsHandler, showItems } = itemList(products)
+
+initalPage()
+
 
