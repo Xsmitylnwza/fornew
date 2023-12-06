@@ -1,8 +1,6 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List Application</title>
     <style>
         #listTodo {
@@ -11,30 +9,35 @@
             border-color: gray;
             padding: 10pt;
         }
+
         .todoItem {
             display: flex;
             align-items: center;
         }
+
         button {
             margin-right: 5pt;
             height: 25pt;
         }
+
         p {
             margin-right: 8pt;
         }
+
         input {
             height: 20pt;
         }
     </style>
 </head>
+
 <body>
     <div>
         <div id="addTodo">
             <h2>Add Your Todo:</h2>
-            <input placeholder="Add Todo"/>
+            <input placeholder="Add Todo" />
             <button id="addBtn">Add</button>
         </div>
-        <h1>### Your Todo List ###</h1>
+        <h1>### Your Todo list ###</h1>
         <div id="listTodo"></div>
         <div id="summaryTodo">
             <p id="done">Number of Done:</p>
@@ -42,6 +45,6 @@
         </div>
     </div>
     <script src="./main.js" type="module"></script>
-    
 </body>
+
 </html>
