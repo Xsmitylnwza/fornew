@@ -5,14 +5,12 @@
 
 //2. โจท์ย์ใน Microsoft team
 function isImageFileExtension(fileName) {
-    const extension = ['.png', '.jpg', '.jpeg', '.gif', '.svg']
-    extension.forEach((ex) => {
-        if (fileName.includes(ex)) {
-            console.log(true)
-        }
-    })
-
-    return false
+    return /.jpg$|.png$|.jpeg$|.gif$|.svg$/.test(fileName)
 }
 
-console.log(isImageFileExtension('haha.jpg'))
+console.log(isImageFileExtension('afa.svg'))
+
+function isImageFileExtension2(fileName) {
+    return /[a-z]/.test(fileName)
+}
+console.log(isImageFileExtension2('a'))

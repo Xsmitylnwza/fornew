@@ -30,10 +30,10 @@ const mail = {
 
 //firstname, lastname
 let {
-    recipent: { firstname: kuy, lastname: key }
+    recipent: { firstname, lastname }
 } = mail
-console.log(kuy)
-console.log(key)
+console.log(firstname)
+console.log(lastname)
 // host name
 let { sentDetail: { host: { name: kuyyai } } } = mail
 console.log(kuyyai)

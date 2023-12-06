@@ -9,12 +9,13 @@ const obj = {
     authors: { fullname: 'Jame Smith' }
 }
 //1.destructuring array index 0 and 1
-let [num1, num2] = nums
-console.log(num1, num2)
+const [x1, x2] = nums
+console.log(x1, x2)
 
 //2.get isbn value with name bookId
 const { isbn: bookId } = obj
 console.log(bookId)
+
 
 //3.get full name of author name it authorName
 const { authors: { fullname: authorName } } = obj
@@ -34,6 +35,7 @@ const students = {
         lastName: 'DeeJai'
     }
 }
+
 console.log(getFirstName(students))
 
 // ANS 04 ทำ TodoList ของ wk09 แต่ว่าใช้การ import แยก class กัน and test it in main class

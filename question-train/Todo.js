@@ -9,6 +9,7 @@ class Todo {
     setDescription(newDescription) {
         this.description = newDescription
     }
+
 }
 
 module.exports = Todo

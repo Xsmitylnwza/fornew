@@ -111,3 +111,9 @@ function getPersonName([, { name }]) {
 }
 
 console.log(getPersonName(person))
+
+function echoMessege(msg) {
+    let joji = arguments[1]
+    return msg + joji
+}
+console.log(echoMessege('hello', 'hi'))

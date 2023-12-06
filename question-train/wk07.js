@@ -2,7 +2,18 @@
 const arr1 = [2, 4, 6, 8]
 const arr2 = [1, 3, 5, 9]
 
-
+function lnwza(arr) {
+    let sum = 0
+    let max = arr[0]
+    let min = arr[0]
+    arr.forEach(a => {
+        sum += a
+        if (max < a) max = a
+        if (min > a) min = a
+    })
+    return { sum: sum, avg: sum / arr.length, min: min, max: max }
+}
+console.log(lnwza(arr1))
 
 
 
@@ -22,15 +33,13 @@ const mail = {
     }
 }
 //2.1 get firstname, lastname
-const { recipent: { firstname: fname, lastname: lname } } = mail
-console.log(fname, lname)
-
+const { recipent: { firstname, lastname } } = mail
+console.log(firstname, lastname)
 
 
 //2.2 get host name
-const { sentDetail: { host: { name: name } } } = mail
+const { sentDetail: { host: { name } } } = mail
 console.log(name)
-
 
 //3. crate object Person class with following requirement
 // constructor have 3 field firstname,lastname,dateOfBirth ans. in 03-person 1.GetFullname 2.Isequal(another Person) 3.GetAge 4.ToString
@@ -65,48 +74,47 @@ const mails = [
 ]
 
 // 4.1 print all keyword with first index
-let afindex = keywords.reduce((lnwza, keyword) => {
-    return lnwza += keyword.charAt(0)
-}, '')
-console.log(afindex)
+keywords.forEach((keyword) => console.log(keyword.charAt(0)))
 
 
 // 4.2 return a string that contain all first index of keywords
-keywords.forEach((keyword) => console.log(keyword))
+const hah = keywords.reduce((sum, keywords) => {
+    return sum += keywords.charAt(0)
+
+}, "")
+console.log(hah)
 
 
 
 // 4.3 print all mail
+mails.forEach((mail) => console.log(mail))
 
 
 
 // 4.4 get id from first array of mail
-const fid = mails[0].id
-console.log(fid)
+const idza = mails[0].id
+console.log(idza)
 
 
 // 4.5 create new array to collect all id of mails
-const alldata = []
-mails.forEach((mail) => {
-    alldata.push(mail.id)
-})
-console.log(alldata)
+const idfrommail = mails.map((mail) => mail.id)
+console.log(idfrommail)
+
 
 // 4.6 return array that contains keywords include 'es' (case insensitive)
-const wtf = keywords.filter((keyword) => keyword.toLowerCase().includes('es'))
-console.log(wtf)
-
+const esinclude = keywords.filter((keyword) => /es/.test(keyword.toLowerCase()))
+console.log(esinclude)
 
 // 4.7 array that contains all senders'firstname
-let senderfname = mails.map((mail) => {
-    return mail.sender.firstname
-})
-console.log(senderfname)
+const senderfname = mails.map((mail) => mail.sender.firstname)
+console.log(senderfname
+)
+
 
 
 // 4.8 array that contains all mailids that start with 'logId-'
-let hahman = mails.map((mail) => {
+const logId = mails.map((mail) => {
     return `logId-${mail.id}`
 })
-console.log(hahman)
+console.log(logId)
 
